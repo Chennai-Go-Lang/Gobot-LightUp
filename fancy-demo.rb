@@ -23,7 +23,7 @@ magic = [
 ]
 
 magic.each do |design|
-  design.split("").each_with_index.map do |char, index|
+  design.chars.to_a.each_with_index.map do |char, index|
     if char == "-"
       command_index = 2
     else
