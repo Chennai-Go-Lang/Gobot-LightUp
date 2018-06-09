@@ -17,10 +17,9 @@ def get_led_url(led, command)
   "http://#{RASPI_HOST}:3000/api/robots/Oom/devices/#{led}/commands/#{command}"
 end
 
-magic = [
-  "00011000",
-  "110--011"
-]
+magic_string = "0000000011111111--------"
+
+magic = magic_string.chars.to_a.combination(8).map(&:join).shuffle
 
 magic.each do |design|
   design.chars.to_a.each_with_index.map do |char, index|
