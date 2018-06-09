@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
+require 'http'
+
 RASPI_HOST = ENV['RASPI_HOST']
 
-require 'http'
 device_response = HTTP.get("http://#{RASPI_HOST}:3000/api/robots/Oom/devices").parse
 
 # require 'json'
